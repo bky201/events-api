@@ -13,7 +13,6 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
-import django_heroku
 
 if os.path.exists('env.py'):
     import env
@@ -36,7 +35,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 # DEBUG = 'DEV' in os.environ
 
-ALLOWED_HOSTS = ['myeventapi.heroku.con', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['myeventapi.heroku.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -158,10 +157,9 @@ STATICFILES_FINDERS = [
 
 # Cloudinary Settings
 CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL')
-# Configure Django App for Heroku.
-django_heroku.settings(locals())
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
