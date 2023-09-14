@@ -1,3 +1,7 @@
+env.py
+READ.md
+PACKAGES.md
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
