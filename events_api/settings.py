@@ -32,8 +32,8 @@ CLOUDINARY_STORAGE = {
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
-DEBUG = 'DEV' in os.environ
+DEBUG = True
+# DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = ['myeventapi-91834762378b.herokuapp.com', 'localhost', '127.0.0.1']
 
@@ -134,6 +134,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
 
 STORAGES = {
     # Enable WhiteNoise's GZip and Brotli compression of static assets:
