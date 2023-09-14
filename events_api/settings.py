@@ -35,7 +35,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 # DEBUG = 'DEV' in os.environ
 
-ALLOWED_HOSTS = ['myeventapi.heroku.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['myeventapi-91834762378b.herokuapp.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
