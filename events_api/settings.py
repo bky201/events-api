@@ -47,10 +47,10 @@ if 'DEV' not in os.environ:
     ]
 
 REST_USE_JWT = True
-# JWT_AUTH_SECURE = True
-# JWT_AUTH_COOKIE = 'my-app-auth' #access token
-# JWT_AUTH_REFRESH_COOKIE = 'my-refresh-token' #refresh token
-# JWT_AUTH_SAMESITE = 'None'
+JWT_AUTH_SECURE = True
+JWT_AUTH_COOKIE = 'my-app-auth' #access token
+JWT_AUTH_REFRESH_COOKIE = 'my-refresh-token' #refresh token
+JWT_AUTH_SAMESITE = 'None'
 
 REST_AUTH_SERIALIZERS = {
     'USER_DETAILS_SERIALIZER': 'events_api.serializers.CurrentUserSerializer'
@@ -90,6 +90,7 @@ INSTALLED_APPS = [
     'corsheaders',
 
     'profiles',
+    'posts',
 ]
 
 SITE_ID = 1
