@@ -113,13 +113,14 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = False
 
 # if 'CLIENT_ORIGIN' in os.environ:
-# CORS_ALLOWED_ORIGINS = [
-#     os.environ.get('CLIENT_ORIGIN'),
-#     os.environ.get('ORIGIN_DEV')
-# ]
+CORS_ALLOWED_ORIGINS = [
+    os.environ.get('CLIENT_ORIGIN'),
+    os.environ.get('ORIGIN_DEV-1'),
+    os.environ.get('ORIGIN_DEV-2'),
+]
 # else:
 #     CORS_ALLOWED_ORIGINS = [
 #     ]
