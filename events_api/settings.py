@@ -105,8 +105,8 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
     'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -116,11 +116,11 @@ MIDDLEWARE = [
 CORS_ALLOW_ALL_ORIGINS = True
 
 # if 'CLIENT_ORIGIN' in os.environ:
-CORS_ALLOWED_ORIGINS = [
-    os.environ.get('CLIENT_ORIGIN'),
-    os.environ.get('ORIGIN_DEV_1'),
-    os.environ.get('ORIGIN_DEV_2'),
-]
+# CORS_ALLOWED_ORIGINS = [
+#     os.environ.get('CLIENT_ORIGIN'),
+#     os.environ.get('ORIGIN_DEV_1'),
+#     os.environ.get('ORIGIN_DEV_2'),
+# ]
 # else:
 #     CORS_ALLOWED_ORIGINS = [
 #     ]
