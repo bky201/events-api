@@ -118,8 +118,8 @@ CORS_ALLOW_ALL_ORIGINS = True
 # if 'CLIENT_ORIGIN' in os.environ:
 CORS_ALLOWED_ORIGINS = [
     os.environ.get('CLIENT_ORIGIN'),
-    os.environ.get('ORIGIN_DEV-1'),
-    os.environ.get('ORIGIN_DEV-2'),
+    os.environ.get('ORIGIN_DEV_1'),
+    os.environ.get('ORIGIN_DEV_2'),
 ]
 # else:
 #     CORS_ALLOWED_ORIGINS = [
