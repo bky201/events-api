@@ -62,9 +62,11 @@ REST_AUTH_SERIALIZERS = {
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEV' in os.environ
+DEBUG = 'DEBUG' in os.environ
 
-ALLOWED_HOSTS = ['myeventapi-91834762378b.herokuapp.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = [
+     os.environ.get('ALLOWED_HOST'), 
+     'localhost', ]
 
 
 # Application definition
@@ -113,17 +115,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ALLOW_ALL_ORIGINS = True
 
-# if 'CLIENT_ORIGIN' in os.environ:
-# CORS_ALLOWED_ORIGINS = [
-#     os.environ.get('CLIENT_ORIGIN'),
-#     os.environ.get('ORIGIN_DEV_1'),
-#     os.environ.get('ORIGIN_DEV_2'),
-# ]
-# else:
-#     CORS_ALLOWED_ORIGINS = [
-#     ]
+CORS_ALLOWED_ORIGINS = [
+    os.environ.get('CLIENT_ORIGIN')
+]
 
 CORS_ALLOW_CREDENTIALS = True
 
