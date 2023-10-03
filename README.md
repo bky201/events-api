@@ -403,7 +403,7 @@ Every problem was successfully addressed, except for the lengthy lines found in 
 
 ### Website Objectives
 
-My-evenThis project is designed for various events and occasions. The website's purpose is to link users with past special events, enabling them to reminisce about the enjoyable moments they experienced. Artists' event and schedules information can be shared and delivered to followers very easly.
+My-events is designed for various events and occasions. The website's purpose is to link users with past and special events, enabling them to memorize the enjoyable moments they experienced. Artists' events and informations can be shared and delivered to followers very easly.
 <hr>
 
 ### Agile Strategy
