@@ -30,13 +30,17 @@ class PostListViewTests(APITestCase):
 class PostDetailViewTests(APITestCase):
     """Post detail view tests"""
     def setUp(self):
-        eventuser = User.objects.create_user(username='eventuser', password='pass')
-        eventuser2 = User.objects.create_user(username='eventuser2', password='pass')
+        eventuser = User.objects.create_user(
+            username='eventuser', password='pass'
+            )
+        eventuser2 = User.objects.create_user(
+            username='eventuser2', password='pass'
+            )
         Post.objects.create(
-            owner=eventuser, title='a title', content='eventuser content'
+            owner=eventuser, title='a title', content='eventuser'
         )
         Post.objects.create(
-            owner=eventuser2, title='another title', content='eventuser2 content'
+            owner=eventuser2, title='another title', content='eventuser2'
         )
 
     def test_can_retrieve_post_using_valid_id(self):

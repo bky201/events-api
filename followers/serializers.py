@@ -14,9 +14,10 @@ class FollowerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Follower
         fields = [
-            'id', 'owner', 'followed', 'created_at', 
+            'id', 'owner', 'followed', 'created_at',
             'followed_name'
         ]
+
     def create(self, validated_data):
         try:
             return super().create(validated_data)

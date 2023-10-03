@@ -5,6 +5,7 @@ from .models import Post
 from .serializers import PostSerializer
 from events_api.permissions import IsOwnerOrReadOnly
 
+
 class PostList(generics.ListCreateAPIView):
     """
     List posts or create a post if logged in
@@ -13,8 +14,8 @@ class PostList(generics.ListCreateAPIView):
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     serializer_class = PostSerializer
     queryset = Post.objects.annotate(
-        comments_count = Count('comment', distinct=True),
-        likes_count = Count('likes', distinct=True)
+        comments_count=Count('comment', distinct=True),
+        likes_count=Count('likes', distinct=True)
     ).order_by('-created_at')
     filter_backends = [
         filters.OrderingFilter,
@@ -39,6 +40,7 @@ class PostList(generics.ListCreateAPIView):
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
 
+
 class PostDetail(generics.RetrieveUpdateDestroyAPIView):
     """
     Retrieve a post and edit or delete it if you own it.
@@ -46,6 +48,6 @@ class PostDetail(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [IsOwnerOrReadOnly]
     serializer_class = PostSerializer
     queryset = Post.objects.annotate(
-        comments_count = Count('comment', distinct=True),
-        likes_count = Count('likes', distinct=True)
+        comments_count=Count('comment', distinct=True),
+        likes_count=Count('likes', distinct=True)
     ).order_by('-created_at')

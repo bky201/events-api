@@ -29,11 +29,13 @@ CLOUDINARY_STORAGE = {
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [(
-        'rest_framework.authentication.SessionAuthentication'   # sessions in development
+        # sessions in development
+        'rest_framework.authentication.SessionAuthentication'
         if 'DEV' in os.environ
-        else 'dj_rest_auth.jwt_auth.JWTCookieAuthentication'    # tokens in production
+        # tokens in production
+        else 'dj_rest_auth.jwt_auth.JWTCookieAuthentication'
     )],
-    'DEFAULT_PAGINATION_CLASS': 
+    'DEFAULT_PAGINATION_CLASS':
         'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10,
     'DATETIME_FORMAT': '%d %b %Y',
@@ -47,8 +49,8 @@ if 'DEV' not in os.environ:
 
 REST_USE_JWT = True
 JWT_AUTH_SECURE = True
-JWT_AUTH_COOKIE = 'my-app-auth' #access token
-JWT_AUTH_REFRESH_COOKIE = 'my-refresh-token' #refresh token
+JWT_AUTH_COOKIE = 'my-app-auth'  # access token
+JWT_AUTH_REFRESH_COOKIE = 'my-refresh-token'  # refresh token
 JWT_AUTH_SAMESITE = 'None'
 
 REST_AUTH_SERIALIZERS = {
@@ -65,7 +67,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = 'DEBUG' in os.environ
 
 ALLOWED_HOSTS = [
-     os.environ.get('ALLOWED_HOST'), 
+     os.environ.get('ALLOWED_HOST'),
      'localhost', ]
 
 
@@ -147,14 +149,14 @@ WSGI_APPLICATION = 'events_api.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 if 'DEV' in os.environ:
-     DATABASES = {
+    DATABASES = {
          'default': {
              'ENGINE': 'django.db.backends.sqlite3',
              'NAME': BASE_DIR / 'db.sqlite3',
          }
      }
 else:
-     DATABASES = {
+    DATABASES = {
          'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
      }
 

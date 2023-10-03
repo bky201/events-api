@@ -24,11 +24,11 @@ class PostSerializer(serializers.ModelSerializer):
                 'Image width larger than 4096px!'
             )
         return value
-    
+
     def get_is_owner(self, obj):
         request = self.context['request']
         return request.user == obj.owner
-    
+
     def get_like_id(self, obj):
         user = self.context['request'].user
         if user.is_authenticated:
