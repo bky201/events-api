@@ -1,6 +1,5 @@
 # User Story Testing
 
-[Document can be viewed here]()
 
 ## Posts
 

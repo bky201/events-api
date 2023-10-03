@@ -50,7 +50,7 @@ The main goal of this website is to develop social media website that can provid
 
 The foundation of this project is built upon Agile methodologies, where each project feature is delivered during a specific sprint. This project consists of two sprints, with stories being allocated to epics for better organization. The workflow is managed through a [Kanban board](https://github.com/users/bky201/projects/12) created using GitHub Projects. It's worth noting that all stories come with a comprehensive set of well-defined conditions or requirements that must be met for a user story to be considered complete and ready for evaluation. 
 
-   ![Agile image](./readme/websiteimages/agileapi.png)
+![Agile image](./readme/websiteimages/agileapi.png)
 
 ### Epics 
 
@@ -83,6 +83,7 @@ This epic includes the development of all API endpoints and database connections
 This epic includes the development of all API endpoints and database connections required for implementing CRUD (Create, Read, Update, Delete) functionality for Artist reviews and the calculation of an average rating, which is displayed on user profiles.
 
 <hr>
+
 <br>
 
 ### User Stories
@@ -275,7 +276,7 @@ Implementation:
 
 ## Database Design
 
-    ![ER Diagram](./readme/websiteimages/erd.png)
+![ER Diagram](./readme/websiteimages/erd.png)
 
 ## Security
 
@@ -360,41 +361,57 @@ Installed as package dependcies include the following:
 * typing_extensions==4.7.1
 
 </details>
-<hr>
+
 <br>
 
 ## Testing Backend code
+
 Posts App Unit tests 
 
-![Post Tests](./readme/testing/api-tests.png)
+![api_tests](./readme/testing/api-tests.png)
 
 While API testing was conducted locally during development, the primary testing phase was integrated into the front-end repositories. Testing involved manual interactions with the actual APIs, such as submitting form inputs and loading pages.
 
-
-**Validator Results**
+**Validation Results**
 
 The flake8 tool was utilized to analyze all directories. Numerous problems surfaced due to different causes, including excessive line lengths, extraneous white spaces, improper indentation, and issues with docstrings.
 
 Every problem was successfully addressed, except for the lengthy lines found in migration files, which are auto-generated and therefore not altered. Additionally, the auth validator lines within the settings.py file, constituting framework code, proved unmodifiable.
 
-![Post Tests](./readme/testing/flake8-artists.png)
+![flake8_artists](./readme/testing/flake8-artists.png)
+<br>
 
-![Post Tests](./readme/testing/flake8-comments.png)
 
-![Post Tests](./readme/testing/flake8-contacts.png)
+![flake8_comments](./readme/testing/flake8-comments.png)
+<br>
 
-![Post Tests](./readme/testing/flake8-events_api.png)
 
-![Post Tests](./readme/testing/flake8-followers.png)
+![flake8_contacts](./readme/testing/flake8-contacts.png)
+<br>
 
-![Post Tests](./readme/testing/flake8-likes.png)
 
-![Post Tests](./readme/testing/flake8-posts.png)
+![flake8_events](./readme/testing/flake8-events_api.png)
+<br>
 
-![Post Tests](./readme/testing/flake8-profiles.png)
 
-![Post Tests](./readme/testing/flake8-reviews.png)
+![flake8_followers](./readme/testing/flake8-followers.png)
+<br>
 
+
+![flake8_likes](./readme/testing/flake8-likes.png)
+<br>
+
+
+![flake8_posts](./readme/testing/flake8-posts.png)
+<br>
+
+
+![flake8_profiles](./readme/testing/flake8-profiles.png)
+<br>
+
+
+![flake8_reviews](./readme/testing/flake8-reviews.png)
+<br>
 
 
 # Frontend React-js 
@@ -441,7 +458,7 @@ This epic encompasses the frontend development of the application with a focus o
 **Reviews**
 
 This epic involves the frontend development of the application concerning artist reviews. Its purpose is to enable users to interact with the backend API through the user interface, facilitating the process of leaving reviews on specific artists.
-<hr>
+
 <br>
 
 ## User Stories Frontend
@@ -578,7 +595,7 @@ A loogged out user will have access to the following navigation bar:
    * Sign In
    * Sign Up
 
-![navbar_loggedout](/readme/websiteimages/loggedout-nav.png)
+![navbar_loggedout](./readme/websiteimages/loggedout-nav.png)
 
 Logged in state:
 
@@ -592,7 +609,7 @@ A loogged out user will have access to the following navigation bar:
    * Sign out
    * Profile
 
-![navbar_loggedout](/readme/websiteimages/loggedin-nav.png)
+![navbar_loggedout](./readme/websiteimages/loggedin-nav.png)
 
 User Story:
 
@@ -603,7 +620,7 @@ Implementation:
 A "Sign Up" option in a navbar was created using a UI element, that allows users to navigate to a registration page. This component allow users to input their registration details (e.g., username, password) and submit the form.
 
 
-![signup_page](/readme/websiteimages/signup-page.png)
+![signup_page](./readme/websiteimages/signup-page.png)
 
 User Story:
     
@@ -613,7 +630,7 @@ Implementation:
 
 A "Sign In" option in a navbar was created using a UI element, that allows users to navigate to a sign-in or login page. This component allow users to input their login credentials (e.g., username, password) and submit the form.
 
-![signin_page](/readme/websiteimages/signin-page.png)
+![signin_page](./readme/websiteimages/signin-page.png)
 
 <br>
     
@@ -979,6 +996,7 @@ The main page background colour is an off shade of white (#f8f8f8).
 
 ## Testing Frontend App
 
+Testing results are available in the [TESTING.md file](./TESTING.md)
 
 ## Deployment
 
@@ -1022,7 +1040,7 @@ To create a local copy of the repository code by cloning it just do the followin
 
 ## Credits 
 
-Code institute Mentor Gareth McGirr.
+I would like to thank Gareth McGirr. His work [body-doodles](https://github.com/Gareth-McGirr/body-doodles.git) was a greate inspiration for me to complete my project.
 
 Code Institute for Full stack development.
 [online classes ](https://learn.codeinstitute.net/login?next=/).
