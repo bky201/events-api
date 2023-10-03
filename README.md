@@ -50,7 +50,7 @@ The main goal of this website is to develop social media website that can provid
 
 The foundation of this project is built upon Agile methodologies, where each project feature is delivered during a specific sprint. This project consists of two sprints, with stories being allocated to epics for better organization. The workflow is managed through a [Kanban board](https://github.com/users/bky201/projects/12) created using GitHub Projects. It's worth noting that all stories come with a comprehensive set of well-defined conditions or requirements that must be met for a user story to be considered complete and ready for evaluation. 
 
-![Agile image](./readme/websiteimages/agileapi.png)
+   ![Agile image](./readme/websiteimages/agileapi.png)
 
 ### Epics 
 
@@ -275,7 +275,7 @@ Implementation:
 
 ## Database Design
 
-![ER Diagram](./readme/websiteimages/erd.png)
+    ![ER Diagram](./readme/websiteimages/erd.png)
 
 ## Security
 
