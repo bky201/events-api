@@ -396,18 +396,6 @@ Every problem was successfully addressed, except for the lengthy lines found in 
 ![Post Tests](./readme/testing/flake8-reviews.png)
 
 
-**Bugs and their fixes**
-
-
-
-
-
-
-
-Code institute Mentor Gareth McGirr.
-
-Code Institute for Full stack development.
-[online classes ](https://learn.codeinstitute.net/login?next=/).
 
 # Frontend React-js 
 
@@ -1033,3 +1021,8 @@ To create a local copy of the repository code by cloning it just do the followin
   * On your cmd line write git clone "your https link".
 
 ## Credits 
+
+Code institute Mentor Gareth McGirr.
+
+Code Institute for Full stack development.
+[online classes ](https://learn.codeinstitute.net/login?next=/).
