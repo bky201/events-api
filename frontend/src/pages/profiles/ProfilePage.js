@@ -47,7 +47,7 @@ function ProfilePage() {
 
   const handleDeleteArtist = async () => {
     try {
-      await axios.delete(`/artists/${artistId}`);
+      await axios.delete(`/artists/${artistId}/`);
       await axiosRes.put(`/profiles/${id}/`, { artistId: null });
       setArtistData(null);
     } catch (err) {}
@@ -58,7 +58,7 @@ function ProfilePage() {
     const handleMount = async () => {
       try {
         const [{ data: pageProfile }, { data: profilePosts }] = await Promise.all([
-          axiosReq.get(`/profiles/${id}`),
+          axiosReq.get(`/profiles/${id}/`),
           axiosReq.get(`/posts/?owner__profile=${id}`),
         ]);
         setProfileData((prevState) => ({
@@ -67,7 +67,7 @@ function ProfilePage() {
         }));
         setProfilePosts(profilePosts);
         try {
-          const { data } = await axiosReq.get(`/artists/${artistId}`);
+          const { data } = await axiosReq.get(`/artists/${artistId}/`);
           setArtistData(data);
         } catch (err) {
           setArtistData(null);
