@@ -4,43 +4,38 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 
-import { useParams } from "react-router";
-import { Button, Image } from "react-bootstrap";
-import InfiniteScroll from "react-infinite-scroll-component";
-import axios from "axios";
-import Modal from "react-bootstrap/Modal";
 import Asset from "../../components/Asset";
 
 import styles from "../../styles/ProfilePage.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 
-import PopularProfiles from "./PopularProfiles";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import { useParams } from "react-router-dom";
 import { axiosReq, axiosRes } from "../../api/axiosDefaults";
 import {
   useProfileData,
   useSetProfileData,
 } from "../../contexts/ProfileDataContext";
+import { Button, Image } from "react-bootstrap";
+import InfiniteScroll from "react-infinite-scroll-component";
 import Post from "../posts/Post";
 import { fetchMoreData } from "../../utils/utils";
 import NoResults from "../../assets/no-results.png";
-
 import { ProfileEditDropdown } from "../../components/MoreDropdown";
 
-import Artist from "../artists/Artist";
+// import Artist from "../artists/Artist";
+import axios from "axios";
+import Modal from "react-bootstrap/Modal";
 
-const ProfilePage = () => {
+function ProfilePage() {
   const [hasLoaded, setHasLoaded] = useState(false);
   const [profilePosts, setProfilePosts] = useState({ results: [] });
-  const [artistData, setArtistData] = useState(null);
-
+  // const [artistData, setArtistData] = useState(null);
   const currentUser = useCurrentUser();
   const { id } = useParams();
-
-  const { setProfileData, handleFollow, handleUnfollow } = useSetProfileData();
+  const {setProfileData, handleFollow, handleUnfollow} = useSetProfileData();
   const { pageProfile } = useProfileData();
-
   const [profile] = pageProfile.results;
   const is_owner = currentUser?.username === profile?.owner;
   const artistId = profile?.artistId;
@@ -52,9 +47,9 @@ const ProfilePage = () => {
 
   const handleDeleteArtist = async () => {
     try {
-      await axios.delete(`/artists/${artistId}/`);
-      await axiosRes.put(`/profiles/${id}/`, { artistId: null });
-      setArtistData(null);
+      await axios.delete(`/artists/${artistId}`);
+      await axiosRes.put(`/profiles/${id}`, { artistId: null });
+      // setArtistData(null);
     } catch (err) {}
     handleClose();
   };
@@ -63,7 +58,7 @@ const ProfilePage = () => {
     const handleMount = async () => {
       try {
         const [{ data: pageProfile }, { data: profilePosts }] = await Promise.all([
-          axiosReq.get(`/profiles/${id}/`),
+          axiosReq.get(`/profiles/${id}`),
           axiosReq.get(`/posts/?owner__profile=${id}`),
         ]);
         setProfileData((prevState) => ({
@@ -71,15 +66,15 @@ const ProfilePage = () => {
           pageProfile: { results: [pageProfile] },
         }));
         setProfilePosts(profilePosts);
-        try {
-          const { data } = await axiosReq.get(`/artists/${artistId}/`);
-          setArtistData(data);
-        } catch (err) {
-          setArtistData(null);
-        }
+        // try {
+        //   const { data } = await axiosReq.get(`/artists/${artistId}`);
+        //   setArtistData(data);
+        // } catch (err) {
+        //   setArtistData(null);
+        // }
         setHasLoaded(true);
       } catch (err) {
-        setArtistData(null);
+        // setArtistData(null);
       }
     };
     handleMount();
@@ -87,12 +82,12 @@ const ProfilePage = () => {
 
   const mainProfile = (
     <>
-      {profile?.is_owner && (
-        <ProfileEditDropdown
-          id={profile?.id}
-          handleDeleteArtist={handleDeleteArtist}
-        />
-      )}
+    {profile?.is_owner && (
+    <ProfileEditDropdown 
+    id={profile?.id} 
+    handleDeleteArtist={handleDeleteArtist}
+    />
+    )}
       <Row noGutters className="px-3 text-center">
         <Col lg={3} className="text-lg-left">
           <Image
@@ -120,9 +115,9 @@ const ProfilePage = () => {
           </Row>
         </Col>
         <Col lg={3} className="text-lg-right">
-          {currentUser
-            && !is_owner
-            && (profile?.following_id ? (
+          {currentUser &&
+            !is_owner &&
+            (profile?.following_id ? (
               <Button
                 className={`${btnStyles.Button} ${btnStyles.BlackOutline}`}
                 onClick={() => handleUnfollow(profile)}
@@ -145,6 +140,9 @@ const ProfilePage = () => {
 
   const mainProfilePosts = (
     <>
+      <hr />
+      <p className="text-center">{profile?.owner}'s posts</p>
+      <hr />
       {profilePosts.results.length ? (
         <InfiniteScroll
           children={profilePosts.results.map((post) => (
@@ -156,10 +154,10 @@ const ProfilePage = () => {
           next={() => fetchMoreData(profilePosts, setProfilePosts)}
         />
       ) : (
-        <Asset
-          src={NoResults}
-          message={`No results found, ${profile?.owner} hasn't posted yet.`}
-        />
+        <Asset 
+        src={NoResults}
+        message={`No results found, ${profile?.owner} hasn't posted yet.`}
+         />
       )}
     </>
   );
@@ -167,8 +165,6 @@ const ProfilePage = () => {
   return (
     <Row className="d-flex justify-content-center">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
-        <p className="text-center">Most followed profiles.</p>
-        <PopularProfiles />
         <Container className={appStyles.Content}>
           {hasLoaded ? (
             <>
@@ -178,6 +174,7 @@ const ProfilePage = () => {
                   Remove as artist
                 </Button>
               )}
+
               <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                   <Modal.Title>Confirm Delete</Modal.Title>
@@ -197,10 +194,7 @@ const ProfilePage = () => {
                   </Button>
                 </Modal.Footer>
               </Modal>
-              {artistData && (
-                <Artist {...artistData} isProfilePage showAll />
-              )}
-
+                {/* <Artist {...artistData} isProfilePage showAll /> */}
               {mainProfilePosts}
             </>
           ) : (
@@ -210,6 +204,6 @@ const ProfilePage = () => {
       </Col>
     </Row>
   );
-};
+}
 
 export default ProfilePage;
