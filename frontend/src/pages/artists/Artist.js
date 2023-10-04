@@ -25,7 +25,7 @@ const Artist = (props) => {
     reviews_count,
     average_rating,
     isProfilePage,
-    showAll,
+    showAll
   } = props;
 
   
