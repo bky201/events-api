@@ -174,6 +174,7 @@ function ProfilePage() {
                   Remove as artist
                 </Button>
               )}
+
               <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                   <Modal.Title>Confirm Delete</Modal.Title>
