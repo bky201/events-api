@@ -67,6 +67,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = 'DEBUG' in os.environ
 
 ALLOWED_HOSTS = [
+    'myeventsapp-d4a980e19c38.herokuapp.com',
      os.environ.get('ALLOWED_HOST'),
      'localhost', ]
 

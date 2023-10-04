@@ -1,7 +1,7 @@
 # My-events 
 My-events project is a Full Stack website built using Django Rest framework and Reactjs. This website is built to enable users to share and post photos of special events online and make reactions to other posts. Users need to register an account in order to share their photos. When a user registered, an account is creatted with a user profile that will be dedicated for the user to upload profile biography and profile image. Users can then upload and share their photos and make reviews on others uploaded photos that belong to another user. 
 
-[Live Project Available Here](https://myeventapi-myeventapp-d4a980e19c38.herokuapp.com/)
+[Live Project Available Here](https://myeventsapp-d4a980e19c38.herokuapp.com/)
 
 <p align="center"><img src="./readme/websiteimages/mockup.png"
         alt="My-events webpage on multiple devices"></p>
