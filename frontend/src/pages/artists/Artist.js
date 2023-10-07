@@ -28,11 +28,10 @@ const Artist = (props) => {
     showAll
   } = props;
 
-  console.log(props);
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
   const history = useHistory();
-  console.log('isProfilePage:', isProfilePage);
+
   return (
     <Card className={styles.Post}>
       <Card.Body>

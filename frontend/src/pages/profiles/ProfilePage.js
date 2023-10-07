@@ -24,14 +24,12 @@ import { fetchMoreData } from "../../utils/utils";
 import NoResults from "../../assets/no-results.png";
 import { ProfileEditDropdown } from "../../components/MoreDropdown";
 
-// import Artist from "../artists/Artist";
 import axios from "axios";
 import Modal from "react-bootstrap/Modal";
 
 function ProfilePage() {
   const [hasLoaded, setHasLoaded] = useState(false);
   const [profilePosts, setProfilePosts] = useState({ results: [] });
-  // const [artistData, setArtistData] = useState(null);
   const currentUser = useCurrentUser();
   const { id } = useParams();
   const {setProfileData, handleFollow, handleUnfollow} = useSetProfileData();
@@ -49,7 +47,6 @@ function ProfilePage() {
     try {
       await axios.delete(`/artists/${artistId}`);
       await axiosRes.put(`/profiles/${id}`, { artistId: null });
-      // setArtistData(null);
     } catch (err) {}
     handleClose();
   };
@@ -66,15 +63,9 @@ function ProfilePage() {
           pageProfile: { results: [pageProfile] },
         }));
         setProfilePosts(profilePosts);
-        // try {
-        //   const { data } = await axiosReq.get(`/artists/${artistId}`);
-        //   setArtistData(data);
-        // } catch (err) {
-        //   setArtistData(null);
-        // }
         setHasLoaded(true);
       } catch (err) {
-        // setArtistData(null);
+        console.log(err)
       }
     };
     handleMount();
@@ -194,7 +185,6 @@ function ProfilePage() {
                   </Button>
                 </Modal.Footer>
               </Modal>
-                {/* <Artist {...artistData} isProfilePage showAll /> */}
               {mainProfilePosts}
             </>
           ) : (
