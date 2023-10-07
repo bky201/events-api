@@ -61,3 +61,4 @@ All CSS files were validated and no Error was found.
 
 ## Bugs and their fixes
 
+When a user navigates between pages and refreshing the website cuased the user to log out immediately and this was an issue with CORS. Due to front and back end applications on the same domain and it was not configured correctly at the backend django settings. This problem was solved by setting the value of "CORS_ALLOWED_ORIGINS" to development localhost url and the value of "CORS_ALLOW_CREDENTIALS" to be equal to "true".

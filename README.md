@@ -1043,7 +1043,7 @@ To create a local copy of the repository code by cloning it just do the followin
 
 The implementation of the simple star rating component was obtained from [awran5/react-simple-star-rating](https://github.com/awran5/react-simple-star-rating)
 
-I would like to thank Gareth McGirr. His work [body-doodles](https://github.com/Gareth-McGirr/body-doodles.git) was a greate inspiration for me to complete my project.
+I would like to thank Gareth McGirr. His work [body-doodles](https://github.com/Gareth-McGirr/body-doodles.git) was a great inspiration for me to complete my project.
 
 Code Institute for Full stack development.
 [online classes ](https://learn.codeinstitute.net/login?next=/).
