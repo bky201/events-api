@@ -1,6 +1,6 @@
 import { rest } from "msw";
 
-const baseURL = "https://myeventapi-91834762378b.herokuapp.com/";
+const baseURL = "/api";
 
 
 const handlers = [
