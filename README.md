@@ -1,14 +1,14 @@
-# My-even-media 
-My-events project is a Full Stack website built using Django Rest framework and Reactjs. This website is built to enable users to share and post photos of special events online and make reactions to other posts. Users need to register an account in order to share their photos. When a user registered, an account is creatted with a user profile that will be dedicated for the user to upload profile biography and profile image. Users can then upload and share their photos and make reviews on others uploaded photos that belong to another user. 
+# Events-Media  
+Events-Media project is a Full Stack website built using Django Rest framework and Reactjs. This website is built to enable users to share and post photos of special events online and make reactions to other posts. Users need to register an account in order to share their photos. When a user registered, an account is creatted with a user profile that will be dedicated for the user to upload profile biography and profile image. Users can then upload and share their photos and make reviews on others uploaded photos that belong to another user. 
 
 [Live Project Available Here](https://myeventsapp-8aa7e839ed16.herokuapp.com/)
 
 
 <p align="center"><img src="./readme/websiteimages/mockup.png"
-        alt="My-events webpage on multiple devices"></p>
+        alt="Events-Media webpage on multiple devices"></p>
 
 ## Table of Contents
-* [My-events Social Media](#my-events-social-media)
+* [Events-Media](#events-media)
 * [Table of Content](#table-of-contents)
 * [Backend Django-Rest-Framework](#backend-django-rest-framework)
   * [Main Goals](#main-goals)
@@ -421,7 +421,7 @@ Every problem was successfully addressed, except for the lengthy lines found in 
 
 ### Website Objectives
 
-My-events is designed for various events and occasions. The website's purpose is to link users with past and special events, enabling them to memorize the enjoyable moments they experienced. Artists' events and informations can be shared and delivered to followers very easly.
+Events-Media is designed for various events and occasions. The website's purpose is to link users with past and special events, enabling them to memorize the enjoyable moments they experienced. Artists' events and informations can be shared and delivered to followers very easly.
 <hr>
 
 ### Agile Strategy
